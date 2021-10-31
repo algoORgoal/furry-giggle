@@ -62,5 +62,5 @@ ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 # confirm installation
 RUN source ~/.bashrc \
     && node --version \
-    && npm --version
+    && npm --version \
     && yarn --version
