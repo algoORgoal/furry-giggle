@@ -50,8 +50,8 @@ ENV NODE_VERSION 16.13.0
 RUN mkdir -p $NVM_DIR \
     && curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash \
     && source $NVM_DIR/nvm.sh \
-    && nvm install --lts \
-    && nvm alias default lts/* \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
     && nvm use default
 
 # add node and npm to path so the commands are available
