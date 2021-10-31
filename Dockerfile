@@ -53,12 +53,14 @@ RUN mkdir -p $NVM_DIR \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default
+    && npm install yarn
 
 # add node and npm to path so the commands are available
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 # confirm installation
-RUN source ~/.bashrc
-RUN node --version
-RUN npm --version
+RUN source ~/.bashrc \
+    && node --version \
+    && npm --version
+    && yarn --version
