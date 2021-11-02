@@ -43,11 +43,11 @@ COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 
 # nvm environment variables
-ENV NVM_DIR=/usr/local/nvm
+ENV NVM_DIR= ~/.nvm
 ENV NODE_VERSION=16.13.0
 
 # install nvm, node, and npm
-RUN mkdir -p $NVM_DIR \
+RUN mkdir $NVM_DIR \
     && curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash \
     && source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
