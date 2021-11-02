@@ -53,7 +53,7 @@ RUN mkdir -p $NVM_DIR \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default \
-    && source /home/coder/.bashrc
+    && source /home/coder/.bashrc \
     && npm install yarn
 
 # add node and npm to path so the commands are available
