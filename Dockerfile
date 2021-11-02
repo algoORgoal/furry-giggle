@@ -43,7 +43,7 @@ COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 
 # nvm environment variables
-ENV NVM_DIR= ~/.nvm
+ENV NVM_DIR=~/.nvm
 ENV NODE_VERSION=16.13.0
 
 # install nvm, node, and npm
