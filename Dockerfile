@@ -44,11 +44,12 @@ ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 
 # nvm environment variables
 ENV NVM_DIR=/home/coder/.nvm
+ENV NVM_VERSION=0.39.0
 ENV NODE_VERSION=16.13.0
 
 # install nvm, node, and npm
 RUN mkdir -p $NVM_DIR \
-    && curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash \
+    && curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v$NVM_VERSION/install.sh | bash \
     && source $NVM_DIR/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
