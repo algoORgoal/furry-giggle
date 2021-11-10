@@ -36,7 +36,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # -----------
 
 # Install iproute2 for ss command
-RUN sudo apt install iproute2
+RUN sudo apt-get install -y iproute2
 
 # Port
 ENV PORT=8080
