@@ -48,7 +48,7 @@ ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
 # nvm environment variables
 ENV NVM_DIR=/home/coder/.nvm
 ENV NVM_VERSION=0.39.0
-ENV NODE_VERSION=16.13.0
+ENV NODE_VERSION=14.9.0
 
 # install nvm, node, and npm
 RUN mkdir -p $NVM_DIR \
